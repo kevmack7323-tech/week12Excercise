@@ -1,16 +1,16 @@
 import dotenv from "dotenv";
 import express from 'express';
-import connectDB from "./db";
+import connectDB from "db.js";
 dotenv.config();
 const PORT = 3000;
 const app = express();
 
-app.use('/', async(req, res, next) =>{
+app.use('/', async (req, res, next) => {
     next();
 });
 
 
 
-app.listen( PORT, ()=>{
+app.listen(PORT, () => {
     console.log('listening on port..', PORT)
 });
