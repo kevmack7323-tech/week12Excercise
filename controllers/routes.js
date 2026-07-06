@@ -1,43 +1,36 @@
-import Route from "../models/routes.js";
+import Products from "../models/products.js";
 
-export const getAllRoutes = (req, res) = {
-
-}
-
-export const getRoutebyID = (req, res) = {
+export const getAllRoutes = (req, res) => {
 
 }
 
-export const createRoute = (req, res) = {
+export const getRoutebyID = (req, res) => {
 
 }
 
-
-export const updateRoute = async (req, res) => {
-
+export const createRoute = async (req, res) => {
     try {
-        const { id } = req.params;
-        const updateData = req.body;
+        const { learner_id, class_id, scores } = req.body;
 
-        const updatedRoute = await Route.findByIdAndUpdate(
-            id,
-            updateData,
-            { new: true, runValidators: true }
-        );
+        const newProduct = new Products({
+            learner_id,
+            class_id,
+            scores
+        });
+        const savedProduct = await newProduct.save();
 
-        if (!updatedRoute) {
-            return res.status(404).json({ message: "Route not found" });
-        }
+        res.status(201).json(savedProduct);
+    } catch (err) {
+        console.log("could not post data:", err);
+        res.status(500).json({'Data not posted': err.message})
 
-        res.status(200).json(updatedRoute);
-    } catch (error) {
-        res.status(500).json({ message: error.message });
     }
+};
+
+export const updateRoute = (req, res) => {
+
 }
 
-
-
-
-export const deleteRoute = (req, res) = {
+export const deleteRoute = (req, res) => {
 
 }
