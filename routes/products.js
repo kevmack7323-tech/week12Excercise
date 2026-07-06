@@ -1,20 +1,22 @@
 import express from "express";
-
+import {
+  getAllRoutes,
+  getRoutebyID,
+  createRoute,
+  updateRoute,
+  deleteRoute,
+} from " .js";
 
 const router = express.Router();
 
-router.get("/", (req,res) =>{
+router.get("/", (getAllRoutes) => {});
 
-})
+router.get("/:id", (getRoutebyID) => {});
 
-router.post("/", (req,res) =>{
-    
-})
+router.post("/", (createRoute) => {});
 
-router.patch("/", (req,res) =>{
-    
-})
+router.patch("/", (updateRoute) => {});
 
-router.delete("/", (req,res) =>{
-    
-})
+router.delete("/", (deleteRoute) => {});
+
+export default router;
