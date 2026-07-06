@@ -5,18 +5,18 @@ import {
   createRoute,
   updateRoute,
   deleteRoute,
-} from " .js";
+} from "../controllers/routes.js";
 
 const router = express.Router();
 
-router.get("/", (getAllRoutes) => {});
+router.get("/", getAllRoutes);
 
-router.get("/:id", (getRoutebyID) => {});
+router.get("/:id", getRoutebyID);
 
-router.post("/", (createRoute) => {});
+router.post("/", createRoute);
 
-router.patch("/", (updateRoute) => {});
+router.patch("/", updateRoute);
 
-router.delete("/", (deleteRoute) => {});
+router.delete("/", deleteRoute);
 
 export default router;

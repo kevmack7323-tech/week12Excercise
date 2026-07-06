@@ -2,12 +2,16 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from 'express';
 import connectDB from "./db.js";
+import productRoutes from "./routes/products.js";
 const PORT = 3000;
 const app = express();
 
-app.use('/', async(req, res, next) =>{
-    next();
-});
+app.use(express.json());
+
+app.use('/products', productRoutes)
+
+
+
 
 
 
