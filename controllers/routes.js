@@ -10,19 +10,22 @@ export const getRoutebyID = (req, res) => {
 
 export const createRoute = async (req, res) => {
     try {
-        const { learner_id, class_id, scores } = req.body;
+        const { airline, src_airport, dst_aiport, codeshare, stops, airplane } = req.body;
 
-        const newProduct = new Products({
-            learner_id,
-            class_id,
-            scores
+        const newRoute = new Route({
+            airline, 
+            src_airport, 
+            dst_aiport, 
+            codeshare, 
+            stops, 
+            airplane
         });
-        const savedProduct = await newProduct.save();
+        const savedRoute = await newRoute.save();
 
-        res.status(201).json(savedProduct);
+        res.status(201).json(savedRoute);
     } catch (err) {
         console.log("could not post data:", err);
-        res.status(500).json({'Data not posted': err.message})
+        res.status(500).json({ 'Data not posted': err.message })
 
     }
 };
