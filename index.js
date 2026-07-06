@@ -1,4 +1,7 @@
 import dotenv from "dotenv";
+import express from 'express';
+import connectDB from "db.js";
+import productControllers from "routes.js"
 dotenv.config();
 import express from 'express';
 import connectDB from "./db.js";
@@ -15,7 +18,8 @@ app.use('/products', productRoutes)
 
 
 
-app.listen( PORT, ()=>{
+app.listen(PORT, () => {
     connectDB()
+
     console.log('listening on port..', PORT)
 });

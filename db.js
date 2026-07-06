@@ -13,7 +13,7 @@ const connectDB = async () => {
 export default connectDB;
 
 
-// Whem someone calls connectDB, try to conenct to the database. 
+// Whem someone calls connectDB, try to conenct to the database.
 // This is an async function
 
 // try = attempt the database connection
