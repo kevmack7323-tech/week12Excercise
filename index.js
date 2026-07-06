@@ -1,18 +1,13 @@
 import express from 'express';
 const PORT = 3000;
-const app = express()
+const app = express();
 
-
+app.use('/', async(req, res, next) =>{
+    next();
+});
 
 
 
 app.listen( PORT, ()=>{
     console.log('listening on port..', PORT)
 });
-
-// git init
-// git add .
-// git commit -m "Initial commit: basic server setup"
-// git branch -M main
-// git remote add origin https://github.com/kevmack7323-tech/week12Excercise
-// git push -u origin main
