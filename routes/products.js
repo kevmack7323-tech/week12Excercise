@@ -5,7 +5,7 @@ import {
   createRoute,
   updateRoute,
   deleteRoute,
-} from "../controllers/routes";
+} from "../controllers/routes.js";
 
 const router = express.Router();
 
